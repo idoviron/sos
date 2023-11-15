@@ -7,7 +7,7 @@ let seq = "11100011100011100010101000";
 let len = seq.length;
 
 //Idiomatic expression in express to route and respond to a client request
-app.get('/val', (req, res) => {        //get requests to the root ("/") will route here
+app.get('/', (req, res) => {        //get requests to the root ("/") will route here
     res.send(value);       //send the string "Hello World!" back to the client
 });
 
