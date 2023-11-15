@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+    <script>
+		
+        setInterval(function(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    //document.getElementById("val").innerHTML = this.responseText;
+					if (this.responseText == 0) {
+						document.body.style.backgroundColor = "black";
+					} else {
+						document.body.style.backgroundColor = "white";
+					}
+                }
+            };
+            //xhttp.open("GET", "https://sos-klbl.onrender.com/", true);
+			xhttp.open("GET", "http://localhost:5000/", true);
+            xhttp.send();
+        }, 20);
+    </script>
+</head>
+<body>
+    <h1 id="val"></h1>
+</body>
+</html>
